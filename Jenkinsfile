@@ -38,6 +38,18 @@ pipeline {
                 }
             }
         }
+        stage('Create NameSpace') {
+            when {
+                branch 'master'
+            }
+            steps {
+                kubernetesDeploy(
+                    kubeconfigId: 'kubeconfig',
+                    configs: 'namespace.yml',
+                    enableConfigSubstitution: true
+                )
+            }
+        }   
         stage('DeployToProduction') {
             when {
                 branch 'master'
