@@ -1,4 +1,4 @@
-i{
+{
 	"trains": [
 		{
 			"name": "Orient Express",
@@ -18,10 +18,10 @@ i{
 			]
 		},
 		{
-			"name": "Trans-Siberian",
+			"name": "Crazy Train",
 			"stops": [
 				{
-					"station": "Pine-Cliffs",
+					"station": "Pine Cliffs",
 					"status": "ON-TIME",
 					"arrival": "12:00pm",
 					"departure": "12:10pm"
@@ -37,7 +37,7 @@ i{
 			]
 		},
 		{
-			"name": "Paris Express",
+			"name": "Acela Express",
 			"stops": [
 				{
 					"station": "Sycamore",
@@ -56,10 +56,10 @@ i{
 			]
 		},
 		{
-			"name": "Amtrak Acela",
+			"name": "Grand Central Express",
 			"stops": [
 				{
-					"station": "Cypress",
+					"station": "125th Street",
 					"status": "ON-TIME",
 					"arrival": "12:00pm",
 					"departure": "12:10pm"
