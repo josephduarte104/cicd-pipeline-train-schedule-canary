@@ -75,7 +75,26 @@ pipeline {
                 )
             steps {   
                 publish2elastic(
-                    sh ~/scripts/jenkins-es.sh
+                    bash '''
+                        #!/bin/bash
+
+                    #Jenkins stage build script to send build infrmation to Elasticsearch
+
+                    cat > message.json <<EOF
+                    {
+                    "enviroment": "$ENV",
+                    "build_number": "$BUILD_NUMBER",
+                    "build_tag": "$BUILD_TAG",
+                    "job_base_name": "$JOB_BASE_NAME",
+                    "job_name": "$JOB_NAME",
+                    "node_name": "$NODE_NAME",
+                    "node_labels": "$NODE_LABELS",
+                    "status": "SUCCESS",
+                    "date": "$(date +%Y%m%d-%H:%M:%S)"
+                    }
+                    EOF
+
+                    curl -u USERNAME:PASSWORD -XPUT 'es.example.com:9200/custom_builds/external/1?pretty' -d '@message.json''''
                 )
                } 
             }
