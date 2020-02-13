@@ -75,7 +75,7 @@ pipeline {
                 )
             steps {   
                 publish2elastic(
-                    sh '''~/scripts/jenkins-es.sh'''
+                    sh ~/scripts/jenkins-es.sh
                 )
                } 
             }
