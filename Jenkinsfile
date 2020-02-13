@@ -73,6 +73,10 @@ pipeline {
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
                 )
+                publish2elastic(
+                    sh '~/scripts/jenkins-es.sh'
+                )
+                
             }
         }
     }
