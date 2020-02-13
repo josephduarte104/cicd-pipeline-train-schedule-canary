@@ -75,11 +75,10 @@ pipeline {
                 )
             steps {   
                 publish2elastic(
-                    bash '''
-                        #!/bin/bash
+                    bash 
+                        "#!/bin/bash
 
                     #Jenkins stage build script to send build infrmation to Elasticsearch
-
                     cat > message.json <<EOF
                     {
                     "enviroment": "$ENV",
@@ -94,8 +93,8 @@ pipeline {
                     }
                     EOF
 
-                    curl -u USERNAME:PASSWORD -XPUT 'es.example.com:9200/custom_builds/external/1?pretty' -d '@message.json''''
-                )
+                    curl -u USERNAME:PASSWORD -XPUT 'es.example.com:9200/custom_builds/external/1?pretty' -d '@message.json'"
+                  )  
                } 
             }
         }
