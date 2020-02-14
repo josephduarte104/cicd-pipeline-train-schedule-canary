@@ -74,7 +74,7 @@ pipeline {
                     enableConfigSubstitution: true
                 )
             steps {   
-                    sh ./home/jenkins/scripts/jenkins-es.sh
+                    sh "./home/jenkins/scripts/jenkins-es.sh"
                } 
             }
         }
