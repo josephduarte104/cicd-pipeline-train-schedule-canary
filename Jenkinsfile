@@ -74,9 +74,7 @@ pipeline {
                     enableConfigSubstitution: true
                 )
             steps {   
-                publish2elastic(
-                    bash ./home/jenkins/scripts/jenkins-es.sh
-                  )  
+                    sh ./home/jenkins/scripts/jenkins-es.sh
                } 
             }
         }
